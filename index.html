@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Gregory Samaras</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -33,7 +34,6 @@
     .brand-sub {
       font-size: 14px;
       color: rgba(226,232,240,0.72);
-      margin-top: 2px;
     }
 
     nav a {
@@ -53,11 +53,9 @@
       padding: 70px 24px 90px;
     }
 
+    /* HERO FIXED */
     .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: start;
+      max-width: 820px;
     }
 
     .eyebrow {
@@ -71,14 +69,12 @@
     h1 {
       font-size: 52px;
       line-height: 1.15;
-      margin: 0 0 22px;
-      color: #ffffff;
+      margin-bottom: 22px;
     }
 
     .hero p {
       font-size: 20px;
       color: rgba(226,232,240,0.85);
-      max-width: 700px;
     }
 
     .hero-buttons {
@@ -118,29 +114,6 @@
       background: rgba(255,255,255,0.10);
     }
 
-    .glass-box {
-      border: 1px solid rgba(21,82,89,0.30);
-      background: rgba(255,255,255,0.10);
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.25);
-      backdrop-filter: blur(16px);
-    }
-
-    .glass-box h2,
-    .section-title {
-      margin-top: 12px;
-      margin-bottom: 0;
-      font-size: 32px;
-      color: white;
-    }
-
-    .glass-box p,
-    .glass-box div {
-      color: rgba(226,232,240,0.88);
-      font-size: 17px;
-    }
-
     .section {
       margin-top: 70px;
     }
@@ -153,11 +126,15 @@
       margin-bottom: 12px;
     }
 
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
     .projects {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
-      margin-top: 28px;
     }
 
     .card {
@@ -180,19 +157,16 @@
     .card-small {
       font-size: 14px;
       color: rgba(226,232,240,0.70);
-      margin-bottom: 8px;
     }
 
     .card h3 {
-      margin: 0 0 14px;
-      font-size: 30px;
-      color: white;
+      margin: 10px 0;
+      font-size: 28px;
     }
 
     .card p {
-      font-size: 18px;
+      font-size: 17px;
       color: rgba(226,232,240,0.85);
-      margin-bottom: 18px;
     }
 
     .card a {
@@ -200,7 +174,6 @@
       text-decoration: none;
       font-size: 15px;
       font-weight: 600;
-      text-underline-offset: 4px;
     }
 
     .card a:hover {
@@ -217,25 +190,20 @@
     }
 
     .teal-box h2 {
-      margin-top: 10px;
-      font-size: 34px;
-      color: white;
+      font-size: 32px;
     }
 
     .teal-box p {
-      font-size: 19px;
+      font-size: 18px;
       color: rgba(241,245,249,0.90);
-      max-width: 760px;
     }
 
     .footer {
       margin-top: 80px;
       color: rgba(148,163,184,0.75);
-      font-size: 15px;
     }
 
     @media (max-width: 900px) {
-      .hero,
       .projects {
         grid-template-columns: 1fr;
       }
@@ -243,22 +211,8 @@
       h1 {
         font-size: 40px;
       }
-
-      .card h3 {
-        font-size: 26px;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 18px;
-      }
     }
+
   </style>
 </head>
 
@@ -269,6 +223,7 @@
       <div class="brand">Gregory Samaras</div>
       <div class="brand-sub">Security, governance, and infrastructure</div>
     </div>
+
     <div>
       <a href="#about">About</a>
       <a href="#work">Work</a>
@@ -279,74 +234,55 @@
   <div class="container">
 
     <section class="hero">
-      <div>
-        <div class="eyebrow">Professional profile</div>
-        <h1>Security, governance, and infrastructure work focused on clarity, control, and real-world implementation.</h1>
-        <p>
-          I work across Microsoft 365, Entra ID, Intune, Azure, and compliance initiatives. What interests me most is understanding how systems actually operate and improving how security and governance are applied in practice.
-        </p>
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#work">View work</a>
-          <a class="btn btn-secondary" href="#contact">Contact</a>
-        </div>
-      </div>
+      <div class="eyebrow">Professional profile</div>
 
-      <div class="glass-box">
-        <div class="card-small">Why this works</div>
-        <h2>Glass premium, but more yours</h2>
-        <div style="margin-top:18px;">
-          <p>Dark and comfortable overall feel</p>
-          <p>Teal pulled in from your CV for identity</p>
-          <p>Premium glass treatment without feeling flashy</p>
-          <p>More distinctive than a generic dark portfolio</p>
-        </div>
+      <h1>
+        Security, governance, and infrastructure work focused on clarity, control, and real-world implementation.
+      </h1>
+
+      <p>
+        I work across Microsoft 365, Entra ID, Intune, Azure, and compliance initiatives. What interests me most is understanding how systems actually operate and improving how security and governance are applied in practice.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="#work">View work</a>
+        <a class="btn btn-secondary" href="#contact">Contact</a>
       </div>
     </section>
 
     <section id="work" class="section">
       <div class="section-label">Selected work</div>
-      <div class="section-title">Project cards with softer premium depth</div>
+      <div class="section-title">Project work and case examples</div>
 
       <div class="projects">
+
         <div class="card">
           <div class="card-small">Work sample</div>
           <h3>External Security Exposure</h3>
-          <p>Looking into externally visible findings and understanding what they meant in real infrastructure terms.</p>
-         <a href="external-security.html">Read more →</a>
+          <p>
+            Looking into externally visible findings and understanding what they meant in real infrastructure terms.
+          </p>
+          <a href="external-security.html">Read more →</a>
         </div>
 
         <div class="card">
           <div class="card-small">Work sample</div>
           <h3>Azure Governance</h3>
-          <p>Bringing more structure, ownership, and visibility into Azure environments.</p>
+          <p>
+            Bringing more structure, ownership, and visibility into Azure environments.
+          </p>
           <a href="azure.html">Read more →</a>
         </div>
 
-        <div class="card">
-          <div class="card-small">Work sample</div>
-          <h3>Compliance & Controls</h3>
-          <p>Aligning technical controls with governance, audit, and regulatory expectations.</p>
-          <a href="#">Read more →</a>
-        </div>
-
-        <div class="card">
-          <div class="card-small">Work sample</div>
-          <h3>Cloud & Platform Work</h3>
-          <p>Working on Azure-based systems, workloads, and integrations across environments.</p>
-          <a href="#">Read more →</a>
-        </div>
       </div>
     </section>
 
     <section id="about" class="section">
       <div class="teal-box">
         <div class="section-label" style="color:#A9D1D3;">About</div>
-        <h2>Premium feel with more identity</h2>
+        <h2>How I approach this work</h2>
         <p>
-          I don’t see my work as just administering systems. I focus on understanding where things break down and how to improve them in a way that actually works in practice.
-        </p>
-        <p>
-          What interests me most is the point where technical work, governance, and practical decision-making meet.
+          I don’t see my role as just administering systems. I focus on understanding where things break down and how to improve them in a way that actually works in practice.
         </p>
       </div>
     </section>
@@ -354,13 +290,13 @@
     <section id="contact" class="section">
       <div class="teal-box">
         <div class="section-label" style="color:#A9D1D3;">Contact</div>
-        <h2>Still premium, but more consistent with your brand</h2>
+        <h2>Get in touch</h2>
         <p>
-          If you’d like to connect about security, governance, cloud infrastructure, or potential opportunities, feel free to reach out.
+          If you’d like to connect around security, governance, or cloud work, feel free to reach out.
         </p>
+
         <div class="hero-buttons">
-          <a class="btn btn-primary" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-          <a class="btn btn-secondary" href="mailto:your.email@example.com">Email</a>
+          <a class="btn btn-primary" href="https://www.linkedin.com">LinkedIn</a>
         </div>
       </div>
     </section>

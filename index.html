@@ -6,165 +6,370 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e293b 100%);
+      color: #ffffff;
+      line-height: 1.6;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
-      padding: 20px;
-      border-bottom: 1px solid #334155;
+      align-items: center;
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(2, 6, 23, 0.70);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 600;
+      color: #8FB7B9;
+    }
+
+    .brand-sub {
+      font-size: 14px;
+      color: rgba(226,232,240,0.72);
+      margin-top: 2px;
     }
 
     nav a {
-      color: #cbd5f5;
-      margin-left: 20px;
+      margin-left: 22px;
       text-decoration: none;
+      color: #8FB7B9;
+      font-size: 14px;
     }
 
     nav a:hover {
-      color: white;
+      opacity: 0.8;
     }
 
-    h1 {
-      font-size: 36px;
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 24px 90px;
     }
 
     .hero {
-      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(143,183,185,0.9);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 52px;
+      line-height: 1.15;
+      margin: 0 0 22px;
+      color: #ffffff;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: rgba(226,232,240,0.85);
+      max-width: 700px;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-right: 12px;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: #155259;
+      color: white;
+      box-shadow: 0 10px 28px rgba(21,82,89,0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      backdrop-filter: blur(12px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.10);
+    }
+
+    .glass-box {
+      border: 1px solid rgba(21,82,89,0.30);
+      background: rgba(255,255,255,0.10);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+      backdrop-filter: blur(16px);
+    }
+
+    .glass-box h2,
+    .section-title {
+      margin-top: 12px;
+      margin-bottom: 0;
+      font-size: 32px;
+      color: white;
+    }
+
+    .glass-box p,
+    .glass-box div {
+      color: rgba(226,232,240,0.88);
+      font-size: 17px;
+    }
+
+    .section {
+      margin-top: 70px;
+    }
+
+    .section-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(143,183,185,0.9);
+      margin-bottom: 12px;
     }
 
     .projects {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      margin-top: 40px;
+      gap: 24px;
+      margin-top: 28px;
     }
 
     .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.10);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+      backdrop-filter: blur(16px);
+      transition: 0.28s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      background: #334155;
+      transform: translateY(-4px);
+      border-color: rgba(21,82,89,0.35);
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 18px 50px rgba(21,82,89,0.18);
+    }
+
+    .card-small {
+      font-size: 14px;
+      color: rgba(226,232,240,0.70);
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      color: white;
+    }
+
+    .card p {
+      font-size: 18px;
+      color: rgba(226,232,240,0.85);
+      margin-bottom: 18px;
     }
 
     .card a {
-      color: #38bdf8;
+      color: white;
       text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      text-underline-offset: 4px;
     }
 
-    .section {
-      margin-top: 60px;
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .teal-box {
+      border: 1px solid rgba(21,82,89,0.30);
+      background: rgba(21,82,89,0.18);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+      backdrop-filter: blur(16px);
+    }
+
+    .teal-box h2 {
+      margin-top: 10px;
+      font-size: 34px;
+      color: white;
+    }
+
+    .teal-box p {
+      font-size: 19px;
+      color: rgba(241,245,249,0.90);
+      max-width: 760px;
     }
 
     .footer {
-      margin-top: 60px;
-      color: #94a3b8;
+      margin-top: 80px;
+      color: rgba(148,163,184,0.75);
+      font-size: 15px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .card h3 {
+        font-size: 26px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 18px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<nav>
-  <div><strong>Gregory Samaras</strong></div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<div class="container">
-
-  <div class="hero">
-    <h1>
-      I work on security, governance, and infrastructure problems 
-      that need both technical depth and practical judgment.
-    </h1>
-
-    <p>
-      My background sits across Microsoft 365, Entra ID, Intune, Azure, and compliance work.
-      What interests me most is improving how things are structured, secured, and actually run.
-    </p>
-  </div>
-
-  <div id="projects" class="section">
-    <h2>Projects</h2>
-
-    <div class="projects">
-
-      <div class="card">
-        <h3>Azure Governance</h3>
-        <p>
-          I started looking at Azure governance because it was clear that structure 
-          and ownership were missing across subscriptions.
-        </p>
-        <a href="#">Read more →</a>
-      </div>
-
-      <div class="card">
-        <h3>BitSight Remediation</h3>
-        <p>
-          This involved understanding external findings and mapping them back 
-          to real infrastructure and ownership.
-        </p>
-        <a href="bitsight.html">Read more →</a>
-      </div>
-
-      <div class="card">
-        <h3>Drata Implementation</h3>
-        <p>
-          Focused on aligning technical controls with compliance expectations 
-          around identity and access.
-        </p>
-        <a href="#">Read more →</a>
-      </div>
-
-      <div class="card">
-        <h3>AKS / Aviso</h3>
-        <p>
-          Worked on troubleshooting and shaping Azure-based workloads and integrations.
-        </p>
-        <a href="#">Read more →</a>
-      </div>
-
+  <nav>
+    <div>
+      <div class="brand">Gregory Samaras</div>
+      <div class="brand-sub">Security, governance, and infrastructure</div>
     </div>
-  </div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-  <div id="about" class="section">
-    <h2>About</h2>
-    <p>
-      I don’t see my role as just administering systems. 
-      I focus on understanding where things break down and how to improve them 
-      in a way that actually works in practice.
-    </p>
-  </div>
+  <div class="container">
 
-  <div id="contact" class="section">
-    <h2>Contact</h2>
-    <p>
-      <a href="https://www.linkedin.com">LinkedIn</a>
-    </p>
-  </div>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Professional profile</div>
+        <h1>Security, governance, and infrastructure work focused on clarity, control, and real-world implementation.</h1>
+        <p>
+          I work across Microsoft 365, Entra ID, Intune, Azure, and compliance initiatives. What interests me most is understanding how systems actually operate and improving how security and governance are applied in practice.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#work">View work</a>
+          <a class="btn btn-secondary" href="#contact">Contact</a>
+        </div>
+      </div>
 
-  <div class="footer">
-    Security, governance, and infrastructure-focused work.
-  </div>
+      <div class="glass-box">
+        <div class="card-small">Why this works</div>
+        <h2>Glass premium, but more yours</h2>
+        <div style="margin-top:18px;">
+          <p>Dark and comfortable overall feel</p>
+          <p>Teal pulled in from your CV for identity</p>
+          <p>Premium glass treatment without feeling flashy</p>
+          <p>More distinctive than a generic dark portfolio</p>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <section id="work" class="section">
+      <div class="section-label">Selected work</div>
+      <div class="section-title">Project cards with softer premium depth</div>
+
+      <div class="projects">
+        <div class="card">
+          <div class="card-small">Work sample</div>
+          <h3>External Security Exposure</h3>
+          <p>Looking into externally visible findings and understanding what they meant in real infrastructure terms.</p>
+          <a href="bitsight.html">Read more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-small">Work sample</div>
+          <h3>Azure Governance</h3>
+          <p>Bringing more structure, ownership, and visibility into Azure environments.</p>
+          <a href="azure.html">Read more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-small">Work sample</div>
+          <h3>Compliance & Controls</h3>
+          <p>Aligning technical controls with governance, audit, and regulatory expectations.</p>
+          <a href="#">Read more →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-small">Work sample</div>
+          <h3>Cloud & Platform Work</h3>
+          <p>Working on Azure-based systems, workloads, and integrations across environments.</p>
+          <a href="#">Read more →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="teal-box">
+        <div class="section-label" style="color:#A9D1D3;">About</div>
+        <h2>Premium feel with more identity</h2>
+        <p>
+          I don’t see my work as just administering systems. I focus on understanding where things break down and how to improve them in a way that actually works in practice.
+        </p>
+        <p>
+          What interests me most is the point where technical work, governance, and practical decision-making meet.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="teal-box">
+        <div class="section-label" style="color:#A9D1D3;">Contact</div>
+        <h2>Still premium, but more consistent with your brand</h2>
+        <p>
+          If you’d like to connect about security, governance, cloud infrastructure, or potential opportunities, feel free to reach out.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+          <a class="btn btn-secondary" href="mailto:your.email@example.com">Email</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Security, governance, and infrastructure-focused work.
+    </div>
+
+  </div>
 
 </body>
 </html>

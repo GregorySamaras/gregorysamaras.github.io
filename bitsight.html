@@ -1,79 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BitSight Remediation | Gregory Samaras</title>
+  <title>External Security Exposure | Gregory Samaras</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px 80px;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e293b 100%);
+      color: #ffffff;
+      line-height: 1.7;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid #334155;
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(2, 6, 23, 0.70);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 600;
+      color: #8FB7B9;
+    }
+
+    .brand-sub {
+      font-size: 14px;
+      color: rgba(226,232,240,0.72);
+      margin-top: 2px;
     }
 
     nav a {
-      color: #cbd5e1;
+      margin-left: 22px;
       text-decoration: none;
-      margin-left: 20px;
+      color: #8FB7B9;
+      font-size: 14px;
     }
 
     nav a:hover {
-      color: white;
+      opacity: 0.8;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: auto;
+      padding: 70px 24px 90px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(143,183,185,0.9);
+      margin-bottom: 12px;
     }
 
     h1 {
-      font-size: 42px;
-      line-height: 1.2;
-      margin-top: 20px;
-      margin-bottom: 10px;
+      font-size: 52px;
+      line-height: 1.15;
+      margin: 0 0 24px;
+      color: white;
     }
 
     h2 {
-      margin-top: 40px;
-      font-size: 26px;
-      color: #f8fafc;
-    }
-
-    p {
-      font-size: 18px;
-      color: #cbd5e1;
+      font-size: 31px;
+      margin: 0 0 16px;
+      color: white;
     }
 
     .intro {
-      font-size: 20px;
-      color: #e2e8f0;
-      max-width: 800px;
+      font-size: 21px;
+      color: rgba(226,232,240,0.88);
+      max-width: 820px;
+      margin-bottom: 30px;
     }
 
     .section {
-      margin-top: 35px;
+      margin-top: 34px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.10);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+      backdrop-filter: blur(16px);
     }
 
-    .box {
-      background: #1e293b;
-      border-radius: 12px;
-      padding: 24px;
-      margin-top: 20px;
+    .section p,
+    .section li {
+      font-size: 18px;
+      color: rgba(226,232,240,0.88);
     }
 
     ul {
-      color: #cbd5e1;
-      font-size: 18px;
       padding-left: 22px;
+      margin: 0;
     }
 
     li {
@@ -82,54 +108,75 @@
 
     .back-link {
       display: inline-block;
-      margin-top: 40px;
-      color: #38bdf8;
+      margin-top: 36px;
+      color: white;
       text-decoration: none;
+      font-weight: 600;
+      text-underline-offset: 4px;
     }
 
     .back-link:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 40px;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 18px;
+      }
     }
   </style>
 </head>
 
 <body>
   <nav>
-    <div><strong>Gregory Samaras</strong></div>
+    <div>
+      <div class="brand">Gregory Samaras</div>
+      <div class="brand-sub">Security, governance, and infrastructure</div>
+    </div>
     <div>
       <a href="index.html#about">About</a>
-      <a href="index.html#projects">Projects</a>
+      <a href="index.html#work">Work</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </nav>
 
   <div class="container">
-    <h1>BitSight Remediation</h1>
+    <div class="eyebrow">Work sample</div>
+    <h1>External Security Exposure</h1>
 
     <p class="intro">
-      This was one of those pieces of work that I found especially interesting because it sat between technical investigation, ownership, and practical remediation. It was not just about spotting an issue. It was about understanding what BitSight was really showing, tracing it back to infrastructure, and working out what could realistically be improved.
+      This was one of those pieces of work that I found especially interesting because it sat between technical investigation, ownership, and practical remediation. It was not just about spotting an issue. It was about understanding what externally visible findings were really showing, tracing them back to infrastructure, and working out what could realistically be improved.
     </p>
 
     <div class="section">
       <h2>Context</h2>
       <p>
-        BitSight was highlighting externally visible security findings across multiple environments. These included TLS-related issues, certificate problems, and patterns that suggested misconfiguration or weak controls on publicly reachable services.
+        External security monitoring was highlighting findings across multiple environments. These included TLS-related issues, certificate problems, and patterns suggesting misconfiguration or weaker controls on publicly reachable services.
       </p>
       <p>
-        The challenge was that these findings did not automatically explain who owned the asset, what the underlying service was, or how straightforward the remediation would be.
+        The challenge was that these findings did not automatically explain who owned the asset, what the underlying service was, or how straightforward remediation would be.
       </p>
     </div>
 
     <div class="section">
       <h2>How I approached it</h2>
-      <div class="box">
-        <ul>
-          <li>I started by reviewing the findings carefully rather than treating them as generic alerts.</li>
-          <li>I looked at what was actually being flagged, such as TLS versions, certificate mismatches, and self-signed certificate exposure.</li>
-          <li>I then worked to connect those findings back to real services and infrastructure.</li>
-          <li>I tried to separate what was clearly actionable from what needed more context or coordination with other teams.</li>
-        </ul>
-      </div>
+      <ul>
+        <li>I started by reviewing the findings carefully rather than treating them as generic alerts.</li>
+        <li>I looked at what was actually being flagged, such as TLS versions, certificate mismatches, and self-signed certificate exposure.</li>
+        <li>I then worked to connect those findings back to real services and infrastructure.</li>
+        <li>I tried to separate what was clearly actionable from what needed more context or coordination with other teams.</li>
+      </ul>
     </div>
 
     <div class="section">
@@ -149,7 +196,7 @@
       </p>
     </div>
 
-    <a class="back-link" href="index.html#projects">← Back to projects</a>
+    <a class="back-link" href="index.html#work">← Back to work</a>
   </div>
 </body>
 </html>

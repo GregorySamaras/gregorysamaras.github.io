@@ -6,6 +6,14 @@
   <title>Gregory Samaras</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -74,6 +82,7 @@
     }
 
     .container {
+      width: 100%;
       max-width: 1100px;
       margin: auto;
       padding: 70px 24px 90px;
@@ -228,67 +237,93 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
-        padding: 18px 20px;
+        padding: 18px 18px;
       }
 
       .nav-links {
         gap: 16px;
       }
 
+      .nav-links a {
+        font-size: 16px;
+      }
+
       .container {
-        padding: 50px 20px 70px;
+        padding: 36px 16px 56px;
+      }
+
+      .eyebrow,
+      .section-label {
+        font-size: 12px;
+        letter-spacing: 0.14em;
       }
 
       h1 {
-        font-size: 34px;
-        line-height: 1.22;
+        font-size: 36px;
+        line-height: 1.24;
+        margin-bottom: 18px;
       }
 
       .hero p {
-        font-size: 18px;
+        font-size: 19px;
+        line-height: 1.65;
       }
 
       .section {
-        margin-top: 56px;
+        margin-top: 42px;
       }
 
       .section-title {
-        font-size: 26px;
+        font-size: 28px;
+        line-height: 1.25;
       }
 
       .projects {
         grid-template-columns: 1fr;
+        gap: 18px;
       }
 
       .card {
-        padding: 22px;
-        border-radius: 24px;
+        padding: 20px;
+        border-radius: 22px;
       }
 
       .card h3 {
         font-size: 24px;
+        line-height: 1.25;
       }
 
       .card p {
+        font-size: 17px;
+        line-height: 1.65;
+      }
+
+      .card a {
         font-size: 16px;
       }
 
       .teal-box {
-        padding: 26px;
-        border-radius: 24px;
+        padding: 22px;
+        border-radius: 22px;
       }
 
       .teal-box h2 {
-        font-size: 26px;
+        font-size: 27px;
+        line-height: 1.25;
       }
 
       .teal-box p {
         font-size: 17px;
+        line-height: 1.7;
       }
 
       .btn {
         margin-right: 8px;
         margin-bottom: 8px;
+      }
+
+      .footer {
+        font-size: 14px;
       }
     }
   </style>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gregory Samaras</title>
 
   <style>
@@ -37,8 +39,13 @@
       margin-top: 2px;
     }
 
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
     .nav-links a {
-      margin-left: 22px;
       text-decoration: none;
       color: rgba(226,232,240,0.82);
       font-size: 14px;
@@ -87,49 +94,13 @@
     h1 {
       font-size: 52px;
       line-height: 1.15;
-      margin-bottom: 22px;
+      margin: 0 0 22px;
     }
 
     .hero p {
       font-size: 20px;
       color: rgba(226,232,240,0.85);
-    }
-
-    .hero-buttons {
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 20px;
-      border-radius: 16px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      margin-right: 12px;
-      transition: 0.25s;
-    }
-
-    .btn-primary {
-      background: #155259;
-      color: white;
-      box-shadow: 0 10px 28px rgba(21,82,89,0.28);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      opacity: 0.96;
-    }
-
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.05);
-      color: white;
-      backdrop-filter: blur(12px);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.10);
+      margin: 0;
     }
 
     .section {
@@ -181,7 +152,7 @@
     .card p {
       font-size: 17px;
       color: rgba(226,232,240,0.85);
-      margin-bottom: 16px;
+      margin: 0 0 16px;
     }
 
     .card a {
@@ -207,38 +178,117 @@
 
     .teal-box h2 {
       font-size: 32px;
-      margin-top: 0;
-      margin-bottom: 18px;
+      margin: 0 0 18px;
     }
 
     .teal-box p {
       font-size: 18px;
       color: rgba(241,245,249,0.90);
+      margin: 0 0 16px;
+    }
+
+    .teal-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .hero-buttons {
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-right: 12px;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: #155259;
+      color: white;
+      box-shadow: 0 10px 28px rgba(21,82,89,0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
     }
 
     .footer {
       margin-top: 80px;
       color: rgba(148,163,184,0.75);
+      font-size: 15px;
     }
 
     @media (max-width: 900px) {
-      .projects {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 40px;
-      }
-
       nav {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+        padding: 18px 20px;
       }
 
-      .nav-links a {
-        margin-left: 0;
-        margin-right: 18px;
+      .nav-links {
+        gap: 16px;
+      }
+
+      .container {
+        padding: 50px 20px 70px;
+      }
+
+      h1 {
+        font-size: 34px;
+        line-height: 1.22;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .section {
+        margin-top: 56px;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .card h3 {
+        font-size: 24px;
+      }
+
+      .card p {
+        font-size: 16px;
+      }
+
+      .teal-box {
+        padding: 26px;
+        border-radius: 24px;
+      }
+
+      .teal-box h2 {
+        font-size: 26px;
+      }
+
+      .teal-box p {
+        font-size: 17px;
+      }
+
+      .btn {
+        margin-right: 8px;
+        margin-bottom: 8px;
       }
     }
   </style>

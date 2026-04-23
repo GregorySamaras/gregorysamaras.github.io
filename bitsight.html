@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BitSight Remediation | Gregory Samaras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #0f172a;
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px 80px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #334155;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 26px;
+      color: #f8fafc;
+    }
+
+    p {
+      font-size: 18px;
+      color: #cbd5e1;
+    }
+
+    .intro {
+      font-size: 20px;
+      color: #e2e8f0;
+      max-width: 800px;
+    }
+
+    .section {
+      margin-top: 35px;
+    }
+
+    .box {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 20px;
+    }
+
+    ul {
+      color: #cbd5e1;
+      font-size: 18px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      color: #38bdf8;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div><strong>Gregory Samaras</strong></div>
+    <div>
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>BitSight Remediation</h1>
+
+    <p class="intro">
+      This was one of those pieces of work that I found especially interesting because it sat between technical investigation, ownership, and practical remediation. It was not just about spotting an issue. It was about understanding what BitSight was really showing, tracing it back to infrastructure, and working out what could realistically be improved.
+    </p>
+
+    <div class="section">
+      <h2>Context</h2>
+      <p>
+        BitSight was highlighting externally visible security findings across multiple environments. These included TLS-related issues, certificate problems, and patterns that suggested misconfiguration or weak controls on publicly reachable services.
+      </p>
+      <p>
+        The challenge was that these findings did not automatically explain who owned the asset, what the underlying service was, or how straightforward the remediation would be.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>How I approached it</h2>
+      <div class="box">
+        <ul>
+          <li>I started by reviewing the findings carefully rather than treating them as generic alerts.</li>
+          <li>I looked at what was actually being flagged, such as TLS versions, certificate mismatches, and self-signed certificate exposure.</li>
+          <li>I then worked to connect those findings back to real services and infrastructure.</li>
+          <li>I tried to separate what was clearly actionable from what needed more context or coordination with other teams.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>What mattered most</h2>
+      <p>
+        What made this valuable was not just identifying technical weaknesses, but helping turn scattered external findings into something more structured and understandable. That meant thinking about ownership, business impact, feasibility, and how remediation would actually happen in practice.
+      </p>
+      <p>
+        This is the kind of work I enjoy because it combines investigation, communication, and security thinking rather than just applying a fix in isolation.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Why I include it here</h2>
+      <p>
+        I see this as a good example of how I like to work. I try to understand the real shape of a problem first, then bring structure to it, and then move it toward a solution that is technically sound but also realistic in a live environment.
+      </p>
+    </div>
+
+    <a class="back-link" href="index.html#projects">← Back to projects</a>
+  </div>
+</body>
+</html>

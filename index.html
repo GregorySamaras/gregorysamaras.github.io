@@ -28,23 +28,42 @@
     .brand {
       font-size: 20px;
       font-weight: 600;
-      color: #8FB7B9;
+      color: #A9D1D3;
     }
 
     .brand-sub {
       font-size: 14px;
       color: rgba(226,232,240,0.72);
+      margin-top: 2px;
     }
 
-    nav a {
+    .nav-links a {
       margin-left: 22px;
       text-decoration: none;
-      color: #8FB7B9;
+      color: rgba(226,232,240,0.82);
       font-size: 14px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.25s ease;
     }
 
-    nav a:hover {
-      opacity: 0.8;
+    .nav-links a:hover {
+      color: #8FB7B9;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #155259;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .container {
@@ -53,7 +72,6 @@
       padding: 70px 24px 90px;
     }
 
-    /* HERO FIXED */
     .hero {
       max-width: 820px;
     }
@@ -154,19 +172,16 @@
       box-shadow: 0 18px 50px rgba(21,82,89,0.18);
     }
 
-    .card-small {
-      font-size: 14px;
-      color: rgba(226,232,240,0.70);
-    }
-
     .card h3 {
-      margin: 10px 0;
+      margin: 0 0 12px;
       font-size: 28px;
+      color: #ffffff;
     }
 
     .card p {
       font-size: 17px;
       color: rgba(226,232,240,0.85);
+      margin-bottom: 16px;
     }
 
     .card a {
@@ -178,6 +193,7 @@
 
     .card a:hover {
       text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     .teal-box {
@@ -191,6 +207,8 @@
 
     .teal-box h2 {
       font-size: 32px;
+      margin-top: 0;
+      margin-bottom: 18px;
     }
 
     .teal-box p {
@@ -211,8 +229,18 @@
       h1 {
         font-size: 40px;
       }
-    }
 
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 18px;
+      }
+    }
   </style>
 </head>
 
@@ -224,7 +252,7 @@
       <div class="brand-sub">Security, governance, and infrastructure</div>
     </div>
 
-    <div>
+    <div class="nav-links">
       <a href="#about">About</a>
       <a href="#work">Work</a>
       <a href="#contact">Contact</a>
@@ -243,88 +271,83 @@
       <p>
         I work across Microsoft 365, Entra ID, Intune, Azure, and compliance initiatives. What interests me most is understanding how systems actually operate and improving how security and governance are applied in practice.
       </p>
-
-      <div class="hero-buttons">
-        <a class="btn btn-primary" href="#work">View work</a>
-        <a class="btn btn-secondary" href="#contact">Contact</a>
-      </div>
     </section>
 
     <section id="work" class="section">
       <div class="section-label">Selected work</div>
       <div class="section-title">Project work and case examples</div>
 
-<div class="projects">
+      <div class="projects">
 
-  <div class="card">
-    <h3>External Security Exposure</h3>
-    <p>
-      Investigating externally visible findings and working out what they actually meant in real infrastructure terms, including ownership, impact, and remediation.
-    </p>
-    <a href="external-security.html">Read more →</a>
-  </div>
+        <div class="card">
+          <h3>External Security Exposure</h3>
+          <p>
+            Investigating externally visible findings and working out what they actually meant in real infrastructure terms, including ownership, impact, and remediation.
+          </p>
+          <a href="external-security.html">Read more →</a>
+        </div>
 
-  <div class="card">
-    <h3>Information Protection</h3>
-    <p>
-      Implementing DLP, retention, and sensitivity labels, aligning information protection controls with regulatory requirements and practical usage.
-    </p>
-    <a href="information-protection.html">Read more →</a>
-  </div>
+        <div class="card">
+          <h3>Information Protection</h3>
+          <p>
+            Implementing DLP, retention, and sensitivity labels, aligning information protection controls with regulatory requirements and practical usage.
+          </p>
+          <a href="information-protection.html">Read more →</a>
+        </div>
 
-  <div class="card">
-    <h3>Identity & Access Controls</h3>
-    <p>
-      Designing and refining access controls across Entra ID, aligning Conditional Access, SSO, and policies with lifecycle risk and real-world usage.
-    </p>
-    <a href="#">Read more →</a>
-  </div>
+        <div class="card">
+          <h3>Identity & Access Controls</h3>
+          <p>
+            Designing and refining access controls across Entra ID, aligning Conditional Access, SSO, and policies with lifecycle risk and real-world usage.
+          </p>
+          <a href="#">Read more →</a>
+        </div>
 
-  <div class="card">
-    <h3>Azure Governance</h3>
-    <p>
-      Bringing structure and visibility into Azure environments, focusing on ownership, policy alignment, and making the platform easier to manage and audit.
-    </p>
-    <a href="azure.html">Read more →</a>
-  </div>
+        <div class="card">
+          <h3>Azure Governance</h3>
+          <p>
+            Bringing structure and visibility into Azure environments, focusing on ownership, policy alignment, and making the platform easier to manage and audit.
+          </p>
+          <a href="azure.html">Read more →</a>
+        </div>
 
-  <div class="card">
-    <h3>Endpoint Modernisation</h3>
-    <p>
-      Moving endpoint management toward a more standardised and secure model using Intune and Defender, improving consistency, visibility, and control.
-    </p>
-    <a href="#">Read more →</a>
-  </div>
+        <div class="card">
+          <h3>Endpoint Modernisation</h3>
+          <p>
+            Moving endpoint management toward a more standardised and secure model using Intune and Defender, improving consistency, visibility, and control.
+          </p>
+          <a href="#">Read more →</a>
+        </div>
 
-  <div class="card">
-    <h3>Cloud & EUC Architecture</h3>
-    <p>
-      Designing secure AVD and Windows 365 environments, embedding identity, endpoint, and compliance controls into platform architecture and delivery.
-    </p>
-    <a href="#">Read more →</a>
-  </div>
+        <div class="card">
+          <h3>Cloud & EUC Architecture</h3>
+          <p>
+            Designing secure AVD and Windows 365 environments, embedding identity, endpoint, and compliance controls into platform architecture and delivery.
+          </p>
+          <a href="#">Read more →</a>
+        </div>
 
-</div>
+      </div>
     </section>
 
-<section id="about" class="section">
-  <div class="teal-box">
-    <div class="section-label" style="color:#A9D1D3;">About</div>
-    <h2>Security, governance, and platform alignment</h2>
+    <section id="about" class="section">
+      <div class="teal-box">
+        <div class="section-label" style="color:#A9D1D3;">About</div>
+        <h2>Security, governance, and platform alignment</h2>
 
-    <p>
-      I work across security, identity, and cloud platforms with a focus on making controls practical, auditable, and aligned with how systems are actually used.
-    </p>
+        <p>
+          I work across security, identity, and cloud platforms with a focus on making controls practical, auditable, and aligned with how systems are actually used.
+        </p>
 
-    <p>
-      My work typically sits between engineering and governance, translating regulatory requirements and security risks into controls that are both effective and maintainable in real environments.
-    </p>
+        <p>
+          My work typically sits between engineering and governance, translating regulatory requirements and security risks into controls that are both effective and maintainable in real environments.
+        </p>
 
-    <p>
-      This includes identity and access design, information protection, endpoint security, and cloud platform governance, with an emphasis on clarity, ownership, and long-term sustainability.
-    </p>
-  </div>
-</section>
+        <p>
+          This includes identity and access design, information protection, endpoint security, and cloud platform governance, with an emphasis on clarity, ownership, and long-term sustainability.
+        </p>
+      </div>
+    </section>
 
     <section id="contact" class="section">
       <div class="teal-box">
@@ -335,7 +358,7 @@
         </p>
 
         <div class="hero-buttons">
-          <a class="btn btn-primary" href="https://www.linkedin.com">LinkedIn</a>
+          <a class="btn btn-primary" href="https://www.linkedin.com" target="_blank">LinkedIn</a>
         </div>
       </div>
     </section>

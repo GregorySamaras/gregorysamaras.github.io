@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gregory Samaras</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e293b 100%);
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(2, 6, 23, 0.70);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 600;
+      color: #A9D1D3;
+    }
+
+    .brand-sub {
+      font-size: 14px;
+      color: rgba(226,232,240,0.72);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(226,232,240,0.82);
+      font-size: 14px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #8FB7B9;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #155259;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 24px 90px;
+    }
+
+    .hero {
+      max-width: 860px;
+    }
+
+    .eyebrow,
+    .section-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(143,183,185,0.9);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 52px;
+      line-height: 1.15;
+      margin: 0 0 22px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: rgba(226,232,240,0.85);
+      margin: 0 0 18px;
+      max-width: 820px;
+    }
+
+    .section {
+      margin-top: 70px;
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      font-size: 18px;
+      color: rgba(226,232,240,0.82);
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.10);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+      backdrop-filter: blur(16px);
+      transition: 0.28s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(21,82,89,0.35);
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 18px 50px rgba(21,82,89,0.18);
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 28px;
+      color: #ffffff;
+    }
+
+    .card p {
+      font-size: 17px;
+      color: rgba(226,232,240,0.85);
+      margin: 0 0 16px;
+    }
+
+    .card a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      text-underline-offset: 4px;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .teal-box {
+      border: 1px solid rgba(21,82,89,0.30);
+      background: rgba(21,82,89,0.18);
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+      backdrop-filter: blur(16px);
+    }
+
+    .teal-box h2 {
+      font-size: 32px;
+      margin: 0 0 18px;
+    }
+
+    .teal-box p {
+      font-size: 18px;
+      color: rgba(241,245,249,0.90);
+      margin: 0 0 16px;
+      max-width: 820px;
+    }
+
+    .teal-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .hero-buttons {
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 20px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      margin-right: 12px;
+      margin-bottom: 10px;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: #155259;
+      color: white;
+      box-shadow: 0 10px 28px rgba(21,82,89,0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .footer {
+      margin-top: 80px;
+      color: rgba(148,163,184,0.75);
+      font-size: 15px;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 18px 18px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 36px 16px 56px;
+      }
+
+      .eyebrow,
+      .section-label {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1.24;
+        margin-bottom: 18px;
+      }
+
+      .hero p {
+        font-size: 19px;
+        line-height: 1.65;
+      }
+
+      .section {
+        margin-top: 42px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        line-height: 1.25;
+      }
+
+      .section-intro {
+        font-size: 17px;
+        line-height: 1.65;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .card {
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .card h3 {
+        font-size: 24px;
+        line-height: 1.25;
+      }
+
+      .card p {
+        font-size: 17px;
+        line-height: 1.65;
+      }
+
+      .card a {
+        font-size: 16px;
+      }
+
+      .teal-box {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .teal-box h2 {
+        font-size: 27px;
+        line-height: 1.25;
+      }
+
+      .teal-box p {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .footer {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div>
+      <div class="brand">Gregory Samaras</div>
+      <div class="brand-sub">Security, governance, and infrastructure</div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <section class="hero">
+      <div class="eyebrow">Security & IT Operations</div>
+
+      <h1>
+        Building practical security, governance, and cloud environments that work in real-world operations.
+      </h1>
+
+      <p>
+        I work across Microsoft 365, Entra ID, Intune, Azure, and compliance-focused security initiatives, with a focus on building environments that are secure, maintainable, and aligned with how organisations actually operate day to day.
+      </p>
+
+      <p>
+        Much of my work involves improving how security and governance are applied in practice, especially in environments where technology, operations, and business expectations overlap.
+      </p>
+
+      <p>
+        What interests me most is understanding how systems really function in day-to-day operations, where complexity and risk emerge naturally, and how environments can be improved without creating unnecessary friction.
+      </p>
+    </section>
+
+    <section id="work" class="section">
+      <div class="section-label">Selected work</div>
+      <div class="section-title">Project work and case examples</div>
+
+      <p class="section-intro">
+        A small selection of work areas that show how I approach security, governance, identity, endpoint management, and cloud platform change in real environments.
+      </p>
+
+      <div class="projects">
+
+        <div class="card">
+          <h3>External Security Exposure</h3>
+          <p>
+            Investigating externally visible findings and working out what they actually meant in real infrastructure terms, including ownership, impact, and remediation.
+          </p>
+          <a href="external-security.html">Read more →</a>
+        </div>
+
+        <div class="card">
+          <h3>Information Protection</h3>
+          <p>
+            Implementing DLP, retention, and sensitivity labels, aligning information protection controls with regulatory requirements and practical usage.
+          </p>
+          <a href="information-protection.html">Read more →</a>
+        </div>
+
+        <div class="card">
+          <h3>Identity & Access Controls</h3>
+          <p>
+            Designing and refining access controls across Entra ID, aligning Conditional Access, SSO, and policies with lifecycle risk and real-world usage.
+          </p>
+          <a href="identity-access.html">Read more →</a>
+        </div>
+
+        <div class="card">
+          <h3>Azure Governance</h3>
+          <p>
+            Bringing structure and visibility into Azure environments, focusing on ownership, policy alignment, and making the platform easier to manage and audit.
+          </p>
+          <a href="azure-governance.html">Read more →</a>
+        </div>
+
+        <div class="card">
+          <h3>Endpoint Modernisation</h3>
+          <p>
+            Moving endpoint management toward a more standardised and secure model using Intune and Defender, improving consistency, visibility, and control.
+          </p>
+          <a href="endpoint-modernisation.html">Read more →</a>
+        </div>
+
+        <div class="card">
+          <h3>Cloud & EUC Architecture</h3>
+          <p>
+            Designing secure AVD and Windows 365 environments, embedding identity, endpoint, and compliance controls into platform architecture and delivery.
+          </p>
+          <a href="cloud-euc-architecture.html">Read more →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="writing" class="section">
+      <div class="teal-box">
+        <div class="section-label" style="color:#A9D1D3;">Writing</div>
+
+        <h2>Thoughts on security, technology, and modern work</h2>
+
+        <p>
+          I also want this space to include writing on topics that sit around the work itself: security culture, employee privacy, AI access to enterprise data, governance, monitoring, and the ethical questions that come with increasingly automated environments.
+        </p>
+
+        <p>
+          The technical pages explain what I have worked on. The writing section is where I want to explore how I think about the direction of technology, security, and the people affected by both.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="writing.html">View writing</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="teal-box">
+        <div class="section-label" style="color:#A9D1D3;">Contact</div>
+
+        <h2>Get in touch</h2>
+
+        <p>
+          If you'd like to connect around security, governance, cloud platforms, or information protection work, feel free to reach out.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="mailto:SamarasGregory@protonmail.com">Email</a>
+
+          <a class="btn btn-primary"
+             href="https://www.linkedin.com/in/gregory-samaras-8047181b5/"
+             target="_blank">
+             LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Security, governance, and infrastructure-focused work.
+    </div>
+
+  </div>
+
+</body>
+</html>

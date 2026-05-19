@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Information Protection | Gregory Samaras</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e293b 100%);
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(2, 6, 23, 0.70);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 600;
+      color: #A9D1D3;
+    }
+
+    .brand-sub {
+      font-size: 14px;
+      color: rgba(226,232,240,0.72);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(226,232,240,0.82);
+      font-size: 14px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #8FB7B9;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #155259;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 980px;
+      margin: auto;
+      padding: 70px 24px 90px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(143,183,185,0.9);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      margin: 0 0 24px;
+      color: white;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin: 0 0 16px;
+      color: white;
+    }
+
+    .intro {
+      font-size: 21px;
+      color: rgba(226,232,240,0.88);
+      max-width: 820px;
+      margin: 0 0 34px;
+    }
+
+    .section {
+      margin-top: 28px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.10);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+      backdrop-filter: blur(16px);
+    }
+
+    .section p,
+    .section li {
+      font-size: 18px;
+      color: rgba(226,232,240,0.88);
+    }
+
+    .section p {
+      margin: 0 0 16px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 36px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      text-underline-offset: 4px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 18px 18px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 36px 16px 56px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1.24;
+        margin-bottom: 18px;
+      }
+
+      h2 {
+        font-size: 27px;
+        line-height: 1.25;
+      }
+
+      .intro {
+        font-size: 19px;
+        line-height: 1.65;
+        margin-bottom: 28px;
+      }
+
+      .section {
+        padding: 22px;
+        border-radius: 22px;
+        margin-top: 22px;
+      }
+
+      .section p,
+      .section li {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div>
+      <div class="brand">Gregory Samaras</div>
+      <div class="brand-sub">Identity, Information Protection & Cloud Governance</div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="eyebrow">Project</div>
+
+    <h1>Information Protection</h1>
+
+    <p class="intro">
+      This work focused on introducing and shaping information protection controls across Microsoft 365, including data classification, DLP, retention, and sensitivity labels. The aim was not just to configure policies, but to make information protection practical, understandable, and usable in a real organisation.
+    </p>
+
+    <div class="section">
+      <h2>Context</h2>
+
+      <p>
+        The organisation needed a clearer approach to how information was classified, protected, retained, and governed across Microsoft 365.
+      </p>
+
+      <p>
+        Some controls existed or were being discussed, but the broader model needed more structure. Legal, Compliance, and IT all had overlapping concerns around privacy, audit readiness, operational usability, and long-term data governance.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>What the work involved</h2>
+
+      <ul>
+        <li>Designing and testing sensitivity labels for files, emails, and collaboration scenarios.</li>
+        <li>Working with DLP policies to reduce accidental data exposure while keeping controls usable.</li>
+        <li>Reviewing retention requirements and how they should apply across Microsoft 365 services.</li>
+        <li>Working with Legal and Compliance to understand expectations around privacy, retention, auditability, and enforcement.</li>
+        <li>Assessing the operational impact of existing approaches, including reliance on long-term litigation hold.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>What mattered most</h2>
+
+      <p>
+        The most important part was balancing protection with usability.
+      </p>
+
+      <p>
+        Information protection controls can quickly become disruptive if they are designed only from a compliance perspective. The challenge was to make controls meaningful without making day-to-day work unnecessarily difficult.
+      </p>
+
+      <p>
+        This also meant thinking carefully about where enforcement made sense, where visibility was more appropriate, and how users would experience controls such as labels, policy tips, and retention behaviour.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Outcome</h2>
+
+      <p>
+        The work helped create a clearer foundation for information protection, including classification, DLP, and retention thinking aligned with regulatory and operational needs.
+      </p>
+
+      <p>
+        It also supported a more structured move away from broad, long-term holds toward a more intentional approach to retention, data governance, and audit readiness.
+      </p>
+    </div>
+
+    <a class="back-link" href="index.html#work">← Back to projects</a>
+
+  </div>
+
+</body>
+</html>

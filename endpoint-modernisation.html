@@ -1,63 +1,276 @@
-<div class="eyebrow">Project</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endpoint Modernisation | Gregory Samaras</title>
 
-<h1>Endpoint Modernisation</h1>
+  <style>
+    * { box-sizing: border-box; }
 
-<p class="intro">
-  This work focused on moving endpoint management toward a more modern, consistent, and security-focused operating model. It involved improving how devices were provisioned, managed, secured, and governed throughout their lifecycle.
-</p>
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
 
-<div class="section">
-  <h2>Context</h2>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e293b 100%);
+      color: #ffffff;
+      line-height: 1.7;
+    }
 
-  <p>
-    Managing endpoints increasingly involves more than device configuration. Identity, compliance, security posture, application management, and user experience all influence how modern endpoints are operated.
-  </p>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(2, 6, 23, 0.70);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-  <p>
-    The organisation was continuing its transition toward cloud-managed devices and modern management platforms, creating opportunities to simplify legacy approaches and improve consistency across the environment.
-  </p>
-</div>
+    .brand {
+      font-size: 20px;
+      font-weight: 600;
+      color: #A9D1D3;
+    }
 
-<div class="section">
-  <h2>What the work involved</h2>
+    .brand-sub {
+      font-size: 14px;
+      color: rgba(226,232,240,0.72);
+      margin-top: 2px;
+    }
 
-  <ul>
-    <li>Supporting Intune-based endpoint management and policy deployment.</li>
-    <li>Contributing to Windows 11 adoption and modern device lifecycle management.</li>
-    <li>Reviewing existing Group Policy configurations and identifying opportunities for migration to cloud-managed controls.</li>
-    <li>Improving device compliance visibility and security configuration consistency.</li>
-    <li>Supporting modern workplace initiatives involving Windows 365, AVD, and cloud-managed endpoints.</li>
-  </ul>
-</div>
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-<div class="section">
-  <h2>What mattered most</h2>
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(226,232,240,0.82);
+      font-size: 14px;
+      position: relative;
+      padding-bottom: 4px;
+    }
 
-  <p>
-    The most important aspect was reducing complexity while improving control.
-  </p>
+    .nav-links a:hover {
+      color: #8FB7B9;
+    }
 
-  <p>
-    Endpoint environments often accumulate years of legacy settings, exceptions, and management practices. Modernisation was not simply about replacing one technology with another, but understanding which controls still provided value and which created unnecessary operational overhead.
-  </p>
+    .container {
+      width: 100%;
+      max-width: 980px;
+      margin: auto;
+      padding: 70px 24px 90px;
+    }
 
-  <p>
-    Successful endpoint management depends on balancing security, usability, supportability, and long-term maintainability rather than focusing on configuration alone.
-  </p>
-</div>
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(143,183,185,0.9);
+      margin-bottom: 12px;
+    }
 
-<div class="section">
-  <h2>Outcome</h2>
+    h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      margin: 0 0 24px;
+    }
 
-  <p>
-    The work supported a more standardised endpoint management model with improved visibility, stronger policy consistency, and closer alignment between identity, compliance, and device management.
-  </p>
+    h2 {
+      font-size: 30px;
+      margin: 0 0 16px;
+    }
 
-  <p>
-    It also contributed to a smoother transition toward modern management practices that are easier to govern and maintain over time.
-  </p>
-</div>
+    .intro {
+      font-size: 21px;
+      color: rgba(226,232,240,0.88);
+      max-width: 820px;
+      margin: 0 0 34px;
+    }
 
-<a class="back-link" href="index.html#work">
-  ← Back to projects
-</a>
+    .section {
+      margin-top: 28px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.10);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+      backdrop-filter: blur(16px);
+    }
+
+    .section p,
+    .section li {
+      font-size: 18px;
+      color: rgba(226,232,240,0.88);
+    }
+
+    .section p {
+      margin: 0 0 16px;
+    }
+
+    .section p:last-child,
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 36px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      text-underline-offset: 4px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 18px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 36px 16px 56px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1.24;
+      }
+
+      h2 {
+        font-size: 27px;
+        line-height: 1.25;
+      }
+
+      .intro {
+        font-size: 19px;
+        line-height: 1.65;
+      }
+
+      .section {
+        padding: 22px;
+        border-radius: 22px;
+        margin-top: 22px;
+      }
+
+      .section p,
+      .section li {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div>
+      <div class="brand">Gregory Samaras</div>
+      <div class="brand-sub">Identity, Information Protection & Cloud Governance</div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="eyebrow">Project</div>
+
+    <h1>Endpoint Modernisation</h1>
+
+    <p class="intro">
+      This work focused on moving endpoint management toward a more modern, consistent, and security-focused operating model. It involved improving how devices were provisioned, managed, secured, and governed throughout their lifecycle.
+    </p>
+
+    <div class="section">
+      <h2>Context</h2>
+      <p>
+        Managing endpoints increasingly involves more than device configuration. Identity, compliance, security posture, application management, and user experience all influence how modern endpoints are operated.
+      </p>
+      <p>
+        The organisation was continuing its transition toward cloud-managed devices and modern management platforms, creating opportunities to simplify legacy approaches and improve consistency across the environment.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>What the work involved</h2>
+      <ul>
+        <li>Supporting Intune-based endpoint management and policy deployment.</li>
+        <li>Contributing to Windows 11 adoption and modern device lifecycle management.</li>
+        <li>Reviewing existing Group Policy configurations and identifying opportunities for migration to cloud-managed controls.</li>
+        <li>Improving device compliance visibility and security configuration consistency.</li>
+        <li>Supporting modern workplace initiatives involving Windows 365, AVD, and cloud-managed endpoints.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>What mattered most</h2>
+      <p>
+        The most important aspect was reducing complexity while improving control.
+      </p>
+      <p>
+        Endpoint environments often accumulate years of legacy settings, exceptions, and management practices. Modernisation was not simply about replacing one technology with another, but understanding which controls still provided value and which created unnecessary operational overhead.
+      </p>
+      <p>
+        Successful endpoint management depends on balancing security, usability, supportability, and long-term maintainability rather than focusing on configuration alone.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Outcome</h2>
+      <p>
+        The work supported a more standardised endpoint management model with improved visibility, stronger policy consistency, and closer alignment between identity, compliance, and device management.
+      </p>
+      <p>
+        It also contributed to a smoother transition toward modern management practices that are easier to govern and maintain over time.
+      </p>
+    </div>
+
+    <a class="back-link" href="index.html#work">← Back to projects</a>
+
+  </div>
+
+</body>
+</html>

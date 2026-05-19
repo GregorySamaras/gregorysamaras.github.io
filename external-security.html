@@ -1,8 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>External Security Exposure | Gregory Samaras</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -27,7 +39,7 @@
     .brand {
       font-size: 20px;
       font-weight: 600;
-      color: #8FB7B9;
+      color: #A9D1D3;
     }
 
     .brand-sub {
@@ -36,18 +48,42 @@
       margin-top: 2px;
     }
 
-    nav a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: #8FB7B9;
-      font-size: 14px;
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
-    nav a:hover {
-      opacity: 0.8;
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(226,232,240,0.82);
+      font-size: 14px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #8FB7B9;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #155259;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .container {
+      width: 100%;
       max-width: 980px;
       margin: auto;
       padding: 70px 24px 90px;
@@ -62,14 +98,14 @@
     }
 
     h1 {
-      font-size: 52px;
+      font-size: 46px;
       line-height: 1.15;
       margin: 0 0 24px;
       color: white;
     }
 
     h2 {
-      font-size: 31px;
+      font-size: 30px;
       margin: 0 0 16px;
       color: white;
     }
@@ -78,11 +114,11 @@
       font-size: 21px;
       color: rgba(226,232,240,0.88);
       max-width: 820px;
-      margin-bottom: 30px;
+      margin: 0 0 34px;
     }
 
     .section {
-      margin-top: 34px;
+      margin-top: 28px;
       border: 1px solid rgba(255,255,255,0.15);
       background: rgba(255,255,255,0.10);
       border-radius: 28px;
@@ -97,6 +133,14 @@
       color: rgba(226,232,240,0.88);
     }
 
+    .section p {
+      margin: 0 0 16px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
     ul {
       padding-left: 22px;
       margin: 0;
@@ -104,6 +148,10 @@
 
     li {
       margin-bottom: 12px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
     }
 
     .back-link {
@@ -120,83 +168,142 @@
     }
 
     @media (max-width: 900px) {
-      h1 {
-        font-size: 40px;
-      }
-
       nav {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
+        padding: 18px 18px;
       }
 
-      nav a {
-        margin-left: 0;
-        margin-right: 18px;
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 36px 16px 56px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1.24;
+        margin-bottom: 18px;
+      }
+
+      h2 {
+        font-size: 27px;
+        line-height: 1.25;
+      }
+
+      .intro {
+        font-size: 19px;
+        line-height: 1.65;
+        margin-bottom: 28px;
+      }
+
+      .section {
+        padding: 22px;
+        border-radius: 22px;
+        margin-top: 22px;
+      }
+
+      .section p,
+      .section li {
+        font-size: 17px;
+        line-height: 1.7;
       }
     }
   </style>
 </head>
 
 <body>
+
   <nav>
     <div>
       <div class="brand">Gregory Samaras</div>
-      <div class="brand-sub">Security, governance, and infrastructure</div>
+      <div class="brand-sub">Identity, Information Protection & Cloud Governance</div>
     </div>
-    <div>
-      <a href="index.html#about">About</a>
+
+    <div class="nav-links">
       <a href="index.html#work">Work</a>
+      <a href="index.html#writing">Writing</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </nav>
 
   <div class="container">
-    <div class="eyebrow">Work sample</div>
+
+    <div class="eyebrow">Project</div>
+
     <h1>External Security Exposure</h1>
 
     <p class="intro">
-      This was one of those pieces of work that I found especially interesting because it sat between technical investigation, ownership, and practical remediation. It was not just about spotting an issue. It was about understanding what externally visible findings were really showing, tracing them back to infrastructure, and working out what could realistically be improved.
+      This work focused on understanding externally visible security findings, identifying ownership, and helping translate technical observations into practical remediation activities. It involved investigation, analysis, and coordination rather than simply applying technical fixes.
     </p>
 
     <div class="section">
       <h2>Context</h2>
+
       <p>
-        External security monitoring was highlighting findings across multiple environments. These included TLS-related issues, certificate problems, and patterns suggesting misconfiguration or weaker controls on publicly reachable services.
+        External security monitoring was identifying TLS issues, certificate findings, and configuration weaknesses across multiple environments.
       </p>
+
       <p>
-        The challenge was that these findings did not automatically explain who owned the asset, what the underlying service was, or how straightforward remediation would be.
+        The challenge was rarely the finding itself. Understanding what service was affected, who owned it, and how remediation could realistically be delivered often required additional investigation.
       </p>
     </div>
 
     <div class="section">
-      <h2>How I approached it</h2>
+      <h2>What the work involved</h2>
+
       <ul>
-        <li>I started by reviewing the findings carefully rather than treating them as generic alerts.</li>
-        <li>I looked at what was actually being flagged, such as TLS versions, certificate mismatches, and self-signed certificate exposure.</li>
-        <li>I then worked to connect those findings back to real services and infrastructure.</li>
-        <li>I tried to separate what was clearly actionable from what needed more context or coordination with other teams.</li>
+        <li>Reviewing externally reported findings.</li>
+        <li>Validating whether issues were genuine, contextual, or already understood.</li>
+        <li>Mapping findings back to infrastructure, services, and ownership.</li>
+        <li>Separating clearly actionable items from findings that needed more context.</li>
+        <li>Supporting remediation discussions around prioritisation, feasibility, and risk.</li>
       </ul>
     </div>
 
     <div class="section">
       <h2>What mattered most</h2>
+
       <p>
-        What made this valuable was not just identifying technical weaknesses, but helping turn scattered external findings into something more structured and understandable. That meant thinking about ownership, business impact, feasibility, and how remediation would actually happen in practice.
+        The most important part was turning fragmented findings into something actionable.
       </p>
+
       <p>
-        This is the kind of work I enjoy because it combines investigation, communication, and security thinking rather than just applying a fix in isolation.
+        Technical findings only become useful when ownership, context, and remediation paths are understood. In many cases, the investigation and coordination effort was more valuable than the technical observation itself.
+      </p>
+
+      <p>
+        This reinforced the importance of visibility, accountability, and clear communication when addressing security issues that span multiple teams, platforms, or environments.
       </p>
     </div>
 
     <div class="section">
-      <h2>Why I include it here</h2>
+      <h2>Outcome</h2>
+
       <p>
-        I see this as a good example of how I like to work. I try to understand the real shape of a problem first, then bring structure to it, and then move it toward a solution that is technically sound but also realistic in a live environment.
+        The work helped improve understanding of externally exposed risks, clarify ownership of findings, and support a more structured approach to remediation and prioritisation.
+      </p>
+
+      <p>
+        It also helped strengthen visibility into how externally reachable services were configured and managed over time.
       </p>
     </div>
 
     <a class="back-link" href="index.html#work">← Back to projects</a>
+
   </div>
+
 </body>
 </html>

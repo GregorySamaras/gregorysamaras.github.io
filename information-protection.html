@@ -241,67 +241,63 @@
 
   <div class="container">
 
-    <div class="eyebrow">Project</div>
+    <div class="eyebrow">Area of work</div>
 
     <h1>Information Protection</h1>
 
     <p class="intro">
-      This work focused on introducing and shaping information protection controls across Microsoft 365, including data classification, DLP, retention, and sensitivity labels. The aim was not just to configure policies, but to make information protection practical, understandable, and usable in a real organisation.
+      My work across Microsoft Purview, Exchange Online and email archiving includes implementing classification and protection controls, investigating retention challenges, and shaping how business information is governed.
     </p>
 
     <div class="section">
-      <h2>Context</h2>
+      <h2>Microsoft Purview — Classification &amp; Data Protection</h2>
 
       <p>
-        The organisation needed a clearer approach to how information was classified, protected, retained, and governed across Microsoft 365.
+        I evaluated Microsoft Purview's information protection capabilities and presented the findings to the Security team. Those findings formed the basis of our classification and protection design, which I helped shape and then implemented.
       </p>
 
       <p>
-        Some controls existed or were being discussed, but the broader model needed more structure. Legal, Compliance, and IT all had overlapping concerns around privacy, audit readiness, operational usability, and long-term data governance.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>What the work involved</h2>
-
-      <ul>
-        <li>Designing and testing sensitivity labels for files, emails, and collaboration scenarios.</li>
-        <li>Working with DLP policies to reduce accidental data exposure while keeping controls usable.</li>
-        <li>Reviewing retention requirements and how they should apply across Microsoft 365 services.</li>
-        <li>Working with Legal and Compliance to understand expectations around privacy, retention, auditability, and enforcement.</li>
-        <li>Assessing the operational impact of existing approaches, including reliance on long-term litigation hold.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>What mattered most</h2>
-
-      <p>
-        The most important part was balancing protection with usability.
+        I deployed the sensitivity labelling solution across Microsoft 365, configuring encryption, authenticated external sharing and restrictions on copying, printing and exporting protected information.
       </p>
 
       <p>
-        Information protection controls can quickly become disruptive if they are designed only from a compliance perspective. The challenge was to make controls meaningful without making day-to-day work unnecessarily difficult.
-      </p>
-
-      <p>
-        This also meant thinking carefully about where enforcement made sense, where visibility was more appropriate, and how users would experience controls such as labels, policy tips, and retention behaviour.
+        I also investigated how Data Loss Prevention (DLP) could complement sensitivity labels, including where enforcement made sense and how policies might affect everyday collaboration.
       </p>
     </div>
 
     <div class="section">
-      <h2>Outcome</h2>
+      <h2>Email Retention &amp; Archiving</h2>
 
       <p>
-        The work helped create a clearer foundation for information protection, including classification, DLP, and retention thinking aligned with regulatory and operational needs.
+        During the earlier adoption of Microsoft 365, Litigation Hold was used to preserve email for up to ten years, without a clear design for managing different legal retention requirements.
       </p>
 
       <p>
-        It also supported a more structured move away from broad, long-term holds toward a more intentional approach to retention, data governance, and audit readiness.
+        Over time, the implications became apparent. Deleted and modified items continued accumulating in Recoverable Items, creating storage pressure and operational challenges in Exchange Online.
+      </p>
+
+      <p>
+        I investigated the underlying retention behaviour and evaluated alternatives, including Microsoft Purview retention policies, retention labels, and Mimecast email journaling and archiving. I presented the options and their technical trade-offs to inform decisions about long-term email retention.
       </p>
     </div>
 
-    <a class="back-link" href="index.html#work">← Back to projects</a>
+    <div class="section">
+      <h2>SharePoint — Document Protection &amp; Records Management</h2>
+
+      <p>
+        A more recent initiative involves protecting and managing business documents stored in SharePoint, with requirements covering classification, DLP, retention policies and labels, records management, auditing and eDiscovery.
+      </p>
+
+      <p>
+        My responsibility covers assessing these requirements against our existing Microsoft Purview configuration and implementing the appropriate controls alongside Security and external delivery partners.
+      </p>
+
+      <p>
+        This includes resolving how new requirements fit the existing classification model, assessing technical and licensing dependencies, and defining which changes require privileged access to the Microsoft 365 environment.
+      </p>
+    </div>
+
+    <a class="back-link" href="index.html#work">← Back to work</a>
 
   </div>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Identity & Access Controls | Gregory Samaras</title>
+  <title>Identity &amp; Access Controls | Gregory Samaras</title>
 
   <style>
     * {
@@ -240,69 +240,29 @@
   </nav>
 
   <div class="container">
-
     <div class="eyebrow">Area of work</div>
-
-    <h1>Identity & Access Controls</h1>
-
-    <p class="intro">
-      This work focused on improving how access is designed, governed, and maintained across hybrid and cloud environments. The aim was to make identity controls more consistent, risk-aware, and practical for real users and systems.
-    </p>
+    <h1>Identity &amp; Access Controls</h1>
+    <p class="intro">I redesigned privileged access in an environment where high-level permissions had been assigned too broadly. That work grew into a wider set of identity controls for administrators, employees and enterprise applications.</p>
 
     <div class="section">
-      <h2>Context</h2>
-
-      <p>
-        Identity sits at the centre of many modern security decisions. Access to applications, platforms, data, and devices increasingly depends on whether identity, device state, and policy are aligned properly.
-      </p>
-
-      <p>
-        The challenge was not only configuring access controls, but understanding how they affected users, devices, cloud services, and legacy environments that were still part of the organisation.
-      </p>
+      <h2>Privileged access and PIM</h2>
+      <p>I introduced Microsoft Entra Privileged Identity Management (PIM), replacing most standing Global Administrator access with eligible, time-limited role activation.</p>
+      <p>For sensitive roles, I established approval requirements; other roles can be activated with a ticket reference and business justification. The resulting model reduced persistent privilege while making administrative elevation more accountable and traceable.</p>
     </div>
 
     <div class="section">
-      <h2>What the work involved</h2>
-
-      <ul>
-        <li>Designing and refining Conditional Access policies across Entra ID.</li>
-        <li>Supporting SAML SSO integrations for enterprise applications.</li>
-        <li>Reviewing access models with a focus on lifecycle risk, least privilege, and auditability.</li>
-        <li>Rationalising legacy GPO and access-related controls where they overlapped with modern identity management.</li>
-        <li>Considering how identity, device compliance, and access decisions interact across AVD, Windows 365, and Microsoft 365 services.</li>
-      </ul>
+      <h2>Conditional Access and sign-in risk</h2>
+      <p>I designed and implemented Conditional Access policies covering multifactor authentication, risky sign-ins and geographical access restrictions. This involved setting appropriate conditions and exceptions across users, applications and device types, rather than relying on a single policy for every scenario.</p>
+      <p>The work brought identity-based controls into environments that span managed endpoints, mobile devices, cloud workspaces and multiple regions.</p>
     </div>
 
     <div class="section">
-      <h2>What mattered most</h2>
-
-      <p>
-        The most important part was making access control understandable and sustainable.
-      </p>
-
-      <p>
-        Identity controls can become fragile when policies are created reactively or without a clear model. The goal was to reduce ambiguity, avoid unnecessary complexity, and make access decisions easier to explain, maintain, and review.
-      </p>
-
-      <p>
-        This work also reinforced how closely identity is tied to endpoint state, application ownership, user lifecycle, and business process. Access control is not just a security setting; it is part of how the organisation operates.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Outcome</h2>
-
-      <p>
-        The work helped create a more consistent approach to identity and access control, improving alignment between users, devices, applications, and security policy.
-      </p>
-
-      <p>
-        It also supported better audit readiness and reduced reliance on legacy or unclear access patterns by moving more decisions into modern, identity-driven controls.
-      </p>
+      <h2>Enterprise SSO and cloud identity</h2>
+      <p>I configured and troubleshot single sign-on integrations for business and compliance platforms using Microsoft Entra ID, including SAML-based application access and authentication flows.</p>
+      <p>I also supported the move from hybrid-joined dependencies to Entra ID-joined Windows 365 and Azure Virtual Desktop environments, aligning device identity and sign-in behaviour with the access model.</p>
     </div>
 
     <a class="back-link" href="index.html#work">← Back to work</a>
-
   </div>
 
 </body>

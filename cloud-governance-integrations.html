@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Governance &amp; Integrations | Gregory Samaras</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e293b 100%);
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(2, 6, 23, 0.70);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 600;
+      color: #A9D1D3;
+    }
+
+    .brand-sub {
+      font-size: 14px;
+      color: rgba(226,232,240,0.72);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(226,232,240,0.82);
+      font-size: 14px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: #8FB7B9;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #155259;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 980px;
+      margin: auto;
+      padding: 70px 24px 90px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(143,183,185,0.9);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      margin: 0 0 24px;
+      color: white;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin: 0 0 16px;
+      color: white;
+    }
+
+    .intro {
+      font-size: 21px;
+      color: rgba(226,232,240,0.88);
+      max-width: 820px;
+      margin: 0 0 34px;
+    }
+
+    .section {
+      margin-top: 28px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.10);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.22);
+      backdrop-filter: blur(16px);
+    }
+
+    .section p,
+    .section li {
+      font-size: 18px;
+      color: rgba(226,232,240,0.88);
+    }
+
+    .section p {
+      margin: 0 0 16px;
+    }
+
+    .section p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 36px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      text-underline-offset: 4px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 18px 18px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 36px 16px 56px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1.24;
+        margin-bottom: 18px;
+      }
+
+      h2 {
+        font-size: 27px;
+        line-height: 1.25;
+      }
+
+      .intro {
+        font-size: 19px;
+        line-height: 1.65;
+        margin-bottom: 28px;
+      }
+
+      .section {
+        padding: 22px;
+        border-radius: 22px;
+        margin-top: 22px;
+      }
+
+      .section p,
+      .section li {
+        font-size: 17px;
+        line-height: 1.7;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div>
+      <div class="brand">Gregory Samaras</div>
+      <div class="brand-sub">Identity, Information Protection & Cloud Governance</div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="eyebrow">Area of work</div>
+    <h1>Cloud Governance &amp; Integrations</h1>
+    <p class="intro">A major part of my cloud work involves understanding what a third-party integration actually does with corporate information, then turning the agreed security requirements into an operational service.</p>
+
+    <div class="section">
+      <h2>Securing an Enterprise AI Integration</h2>
+      <p>For an AI-enabled sales integration, I examined vendor-provided scripts and traced how Microsoft 365 messages and other information would be collected and processed. The review uncovered storage and processing locations outside the organisation’s approved boundaries.</p>
+      <p>I escalated the data residency concerns and worked closely with Legal, Compliance and the vendor to revise the architecture, relocating both storage and processing to approved infrastructure. Data processing was also restricted to approved user groups to meet regional privacy and compliance requirements.</p>
+    </div>
+
+    <div class="section">
+      <h2>Tighter control over email processing</h2>
+      <p>The original email selection relied on static filtering logic. I reviewed the approach, challenged whether it was sufficiently restrictive and defined tighter requirements for which messages could enter the processing pipeline.</p>
+      <p>I implemented additional controls within my scope and worked with the vendor on the vendor-side changes. This reduced reliance on broad filtering assumptions in an integration with access to sensitive business communications.</p>
+    </div>
+
+    <div class="section">
+      <h2>Building the Processing Platform</h2>
+      <p>I built and troubleshot the Azure environment supporting the preprocessor, including Azure Kubernetes Service, Azure Container Registry, PostgreSQL and Microsoft 365 OAuth integration. I also coordinated deployment and authentication changes with the vendor.</p>
+      <p>The integration is operating in production. It is a practical example of combining security review, vendor management and hands-on cloud delivery.</p>
+    </div>
+
+    <div class="section">
+      <h2>Azure resource governance</h2>
+      <p>I reviewed Azure resource inventory and helped establish naming and tagging standards for new deployments. I also designed Azure Policy controls for resource naming and required tags to support more consistent governance as the cloud environment grows.</p>
+    </div>
+
+    <a class="back-link" href="index.html#work">← Back to work</a>
+  </div>
+
+</body>
+</html>

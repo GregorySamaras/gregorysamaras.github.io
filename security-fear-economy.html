@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How fear can drive security spending, leaving organisations with more tools, more noise and less effective protection.">
+  <title>The Security Fear Economy | Gregory Samaras</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e293b 100%);
+      color: #fff;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background: rgba(2, 6, 23, 0.70);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand { font-size: 20px; font-weight: 600; color: #A9D1D3; }
+    .brand-sub { font-size: 14px; color: rgba(226,232,240,0.72); margin-top: 2px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(226,232,240,0.82);
+      font-size: 14px;
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.25s ease;
+    }
+    .nav-links a:hover { color: #8FB7B9; }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #155259;
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after { width: 100%; }
+    main { width: 100%; max-width: 790px; margin: 0 auto; padding: 68px 24px 90px; }
+    .eyebrow {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(143,183,185,0.9);
+      margin-bottom: 14px;
+    }
+    h1 { font-size: 46px; line-height: 1.17; margin: 0 0 16px; }
+    .subtitle {
+      font-size: 20px;
+      line-height: 1.55;
+      color: rgba(226,232,240,0.86);
+      margin: 0 0 18px;
+      font-style: italic;
+    }
+    .article-meta { font-size: 14px; color: rgba(226,232,240,0.6); margin: 0 0 42px; }
+    article p {
+      font-size: 18px;
+      line-height: 1.85;
+      color: rgba(226,232,240,0.9);
+      margin: 0 0 23px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 28px;
+      color: #A9D1D3;
+      text-decoration: none;
+      font-weight: 600;
+      text-underline-offset: 4px;
+    }
+    .back-link:hover { text-decoration: underline; }
+    @media (max-width: 900px) {
+      nav { flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 16px; }
+      main { padding: 38px 18px 60px; }
+      h1 { font-size: 36px; }
+      .subtitle { font-size: 19px; }
+      article p { font-size: 17px; line-height: 1.75; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div>
+      <div class="brand">Gregory Samaras</div>
+      <div class="brand-sub">Identity, Information Protection &amp; Cloud Governance</div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+  <main>
+    <div class="eyebrow">Writing</div>
+    <h1>The Security Fear Economy</h1>
+    <p class="subtitle">Fear is one of the most effective currencies in many industries, and security is no exception.</p>
+    <p class="article-meta">November 2026 · Opinion</p>
+    <article>
+      <p>Every major cyberattack seems to create another sales opportunity. A company suffers a breach, and shortly afterwards, someone is explaining how their security platform could have prevented it.</p>
+      <p>Imagine a CISO hearing that pitch at a conference. The demonstration is impressive, the technology is now AI-powered, and the possibility of becoming the next headline is difficult to ignore. Back at the office, another security tool enters the budget discussion.</p>
+      <p>And that's what makes fear such an effective selling point. The threats are real, the consequences can be serious, and nobody wants to be responsible for rejecting something that might have prevented an incident.</p>
+      <p>There's nothing wrong with security leaders spending less time working directly with technology. That's part of moving into leadership. But when purchasing decisions are made without properly involving the people who operate these systems, it's easy to mistake an impressive demonstration for a genuine security requirement.</p>
+      <p>Every new platform needs configuration, integration, maintenance and someone to investigate its findings. Without that investment, it becomes another dashboard, another stream of alerts and another subscription.</p>
+      <p>Eventually, organisations can find themselves paying for several overlapping products while their security teams struggle to make effective use of them. Important alerts get lost in the noise, and the additional complexity can actually weaken their ability to respond to threats.</p>
+      <p>The irony is that an organisation can spend more on security and end up less secure.</p>
+      <p>Before buying another platform, maybe the first conversation should be with the people managing the existing ones. What are we already paying for? Are we using it properly? And are we buying something because we need it, or because we're afraid of what might happen without it?</p>
+    </article>
+    <a class="back-link" href="index.html#writing">← Back to writing</a>
+  </main>
+</body>
+</html>

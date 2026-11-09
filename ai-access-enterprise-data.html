@@ -3,26 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How Much Enterprise Data Should AI Be Allowed to Access? | Gregory Samaras</title>
-
+  <meta name="description" content="How AI assistants can expose information governance gaps, permission debt and the difference between access and intended use.">
+  <title>AI Assistants Will Expose Your Data Governance Problems | Gregory Samaras</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      -webkit-text-size-adjust: 100%;
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       background: linear-gradient(135deg, #020617 0%, #0f172a 55%, #1e293b 100%);
-      color: #ffffff;
+      color: #fff;
       line-height: 1.7;
+      min-height: 100vh;
     }
-
     nav {
       display: flex;
       justify-content: space-between;
@@ -35,25 +28,9 @@
       top: 0;
       z-index: 100;
     }
-
-    .brand {
-      font-size: 20px;
-      font-weight: 600;
-      color: #A9D1D3;
-    }
-
-    .brand-sub {
-      font-size: 14px;
-      color: rgba(226,232,240,0.72);
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
+    .brand { font-size: 20px; font-weight: 600; color: #A9D1D3; }
+    .brand-sub { font-size: 14px; color: rgba(226,232,240,0.72); margin-top: 2px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 20px; }
     .nav-links a {
       text-decoration: none;
       color: rgba(226,232,240,0.82);
@@ -62,342 +39,86 @@
       padding-bottom: 4px;
       transition: color 0.25s ease;
     }
-
-    .nav-links a:hover {
-      color: #8FB7B9;
-    }
-
+    .nav-links a:hover { color: #8FB7B9; }
     .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 0%;
+      width: 0;
       height: 2px;
       background: #155259;
       transition: width 0.3s ease;
     }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 980px;
-      margin: auto;
-      padding: 70px 24px 90px;
-    }
-
+    .nav-links a:hover::after { width: 100%; }
+    main { width: 100%; max-width: 790px; margin: 0 auto; padding: 68px 24px 90px; }
     .eyebrow {
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: rgba(143,183,185,0.9);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
-
-    h1 {
-      font-size: 46px;
-      line-height: 1.15;
-      margin: 0 0 16px;
-      color: white;
+    h1 { font-size: 46px; line-height: 1.17; margin: 0 0 16px; }
+    .subtitle {
+      font-size: 20px;
+      line-height: 1.55;
+      color: rgba(226,232,240,0.86);
+      margin: 0 0 18px;
+      font-style: italic;
     }
-
-    h2 {
-      font-size: 30px;
-      margin: 0 0 16px;
-      color: white;
-    }
-
-    .article-meta {
-      color: rgba(226,232,240,0.65);
-      margin: 0 0 30px;
-      font-size: 15px;
-    }
-
-    .intro {
-      font-size: 21px;
-      color: rgba(226,232,240,0.88);
-      max-width: 820px;
-      margin: 0 0 22px;
-    }
-
-    .section {
-      margin-top: 28px;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.10);
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.22);
-      backdrop-filter: blur(16px);
-    }
-
-    .section p,
-    .section li {
+    .article-meta { font-size: 14px; color: rgba(226,232,240,0.6); margin: 0 0 42px; }
+    article p {
       font-size: 18px;
-      color: rgba(226,232,240,0.88);
+      line-height: 1.85;
+      color: rgba(226,232,240,0.9);
+      margin: 0 0 23px;
     }
-
-    .section p {
-      margin: 0 0 16px;
-    }
-
-    .section p:last-child {
-      margin-bottom: 0;
-    }
-
-    em {
-      color: rgba(241,245,249,0.95);
-    }
-
     .back-link {
       display: inline-block;
-      margin-top: 36px;
-      color: white;
+      margin-top: 28px;
+      color: #A9D1D3;
       text-decoration: none;
       font-weight: 600;
       text-underline-offset: 4px;
     }
-
-    .back-link:hover {
-      text-decoration: underline;
-    }
-
+    .back-link:hover { text-decoration: underline; }
     @media (max-width: 900px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        padding: 18px 18px;
-      }
-
-      .nav-links {
-        gap: 16px;
-      }
-
-      .nav-links a {
-        font-size: 16px;
-      }
-
-      .container {
-        padding: 36px 16px 56px;
-      }
-
-      .eyebrow {
-        font-size: 12px;
-        letter-spacing: 0.14em;
-      }
-
-      h1 {
-        font-size: 36px;
-        line-height: 1.24;
-        margin-bottom: 14px;
-      }
-
-      h2 {
-        font-size: 27px;
-        line-height: 1.25;
-      }
-
-      .intro {
-        font-size: 19px;
-        line-height: 1.65;
-      }
-
-      .section {
-        padding: 22px;
-        border-radius: 22px;
-        margin-top: 22px;
-      }
-
-      .section p,
-      .section li {
-        font-size: 17px;
-        line-height: 1.7;
-      }
+      nav { flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 16px; }
+      main { padding: 38px 18px 60px; }
+      h1 { font-size: 36px; }
+      .subtitle { font-size: 19px; }
+      article p { font-size: 17px; line-height: 1.75; }
     }
   </style>
 </head>
-
 <body>
-
   <nav>
     <div>
       <div class="brand">Gregory Samaras</div>
-      <div class="brand-sub">Identity, Information Protection & Cloud Governance</div>
+      <div class="brand-sub">Identity, Information Protection &amp; Cloud Governance</div>
     </div>
-
     <div class="nav-links">
       <a href="index.html#work">Work</a>
       <a href="index.html#writing">Writing</a>
       <a href="index.html#contact">Contact</a>
     </div>
   </nav>
-
-  <div class="container">
-
-<div class="eyebrow">Writing</div>
-
-<h1>AI Assistants Will Expose Your Data Governance Problems</h1>
-
-<p class="intro">
-  Most organisations approaching enterprise AI are treating it as a technology adoption exercise.
-</p>
-
-<p class="intro">
-  I suspect it is actually an information governance exercise that happens to involve technology.
-</p>
-
-<p class="intro">
-  The reason is simple. AI does not create new access paths to information. It dramatically reduces the cost of discovering information that was already accessible.
-</p>
-
-<div class="section">
-  <h2>The permission debt nobody wants to discuss</h2>
-
-  <p>
-    Every organisation accumulates permission debt.
-  </p>
-
-  <p>
-    SharePoint sites that nobody owns. Teams channels created for projects that ended years ago. Shared mailboxes with unclear access models. Security groups that were expanded temporarily and never reviewed. Folders inherited through multiple layers of nesting until nobody can confidently explain who has access to what.
-  </p>
-
-  <p>
-    Most of the time these issues remain hidden because discovering information still requires effort. Users need to know where to look, which system contains the information, and often whether the information exists at all.
-  </p>
-
-  <p>
-    AI changes that equation.
-  </p>
-</div>
-
-<div class="section">
-  <h2>Search was never the real challenge</h2>
-
-  <p>
-    Enterprise search has existed for years. Organisations already possess vast quantities of searchable information across Microsoft 365, collaboration platforms, file shares, business applications, and cloud services.
-  </p>
-
-  <p>
-    What limited access in practice was friction.
-  </p>
-
-  <p>
-    Finding information required navigation, context, persistence, and familiarity with internal systems. Valuable information often remained undiscovered not because it was protected, but because it was difficult to locate.
-  </p>
-
-  <p>
-    AI assistants remove much of that friction. The user no longer needs to understand where information resides. They simply describe what they want and receive a response synthesised across multiple systems.
-  </p>
-
-  <p>
-    From a productivity perspective this is enormously valuable. From a governance perspective it changes everything.
-  </p>
-</div>
-
-<div class="section">
-  <h2>Permissions are necessary but not sufficient</h2>
-
-  <p>
-    Security discussions around enterprise AI often focus on permissions.
-  </p>
-
-  <p>
-    If the user already has access to the information, what is the problem?
-  </p>
-
-  <p>
-    Technically, that argument is correct. Practically, it ignores how information is consumed.
-  </p>
-
-  <p>
-    Information that previously existed across separate systems, documents, conversations, and business processes can now be aggregated, summarised, prioritised, and contextualised automatically.
-  </p>
-
-  <p>
-    The question is no longer whether access exists. The question is whether the organisation intended that information to be combined in that manner and presented with that level of visibility.
-  </p>
-</div>
-
-<div class="section">
-  <h2>The governance problem disguised as an AI problem</h2>
-
-  <p>
-    Many organisations will respond by creating AI policies, AI steering committees, and AI governance programmes.
-  </p>
-
-  <p>
-    Some of this is necessary.
-  </p>
-
-  <p>
-    However, I suspect many of the problems being classified as AI governance challenges are actually unresolved information governance challenges.
-  </p>
-
-  <p>
-    Data ownership. Classification. Retention. Access reviews. Accountability. Lifecycle management. These disciplines existed long before generative AI appeared.
-  </p>
-
-  <p>
-    The difference is that weak governance structures become far more visible when AI systems begin operating across organisational knowledge at scale.
-  </p>
-</div>
-
-<div class="section">
-  <h2>The organisations that will benefit most</h2>
-
-  <p>
-    The organisations that gain the most value from enterprise AI are unlikely to be those deploying the most sophisticated models.
-  </p>
-
-  <p>
-    They will be the organisations that understand their information assets, maintain clear ownership, operate mature access control models, and possess confidence in the quality of their data.
-  </p>
-
-  <p>
-    In those environments, AI becomes an accelerator.
-  </p>
-
-  <p>
-    In poorly governed environments, it becomes an amplifier.
-  </p>
-
-  <p>
-    The distinction matters.
-  </p>
-</div>
-
-<div class="section">
-  <h2>A familiar lesson in a new form</h2>
-
-  <p>
-    Throughout the history of enterprise technology, organisations have repeatedly discovered that automation magnifies existing strengths and weaknesses.
-  </p>
-
-  <p>
-    Cloud computing exposed weaknesses in infrastructure governance. Identity platforms exposed weaknesses in access management. Large-scale analytics exposed weaknesses in data quality.
-  </p>
-
-  <p>
-    Enterprise AI will do the same for information governance.
-  </p>
-
-  <p>
-    Organisations that view AI primarily as a technology project may find themselves solving governance problems they did not realise existed. Organisations that address those governance challenges first are likely to extract significantly more value from the technology.
-  </p>
-
-  <p>
-    AI is not creating a new information problem. It is accelerating an old one.
-  </p>
-</div>
-
-<a class="back-link" href="index.html#writing">
-  ← Back to writing
-</a>
-
-  </div>
-
+  <main>
+    <div class="eyebrow">Writing</div>
+    <h1>AI Assistants Will Expose Your Data Governance Problems</h1>
+    <p class="subtitle">AI doesn't just make information easier to find. It can expose years of overlooked decisions about who should have access to it.</p>
+    <article>
+      <p>Over time, every organisation accumulates permission debt. SharePoint sites without clear ownership, abandoned Teams channels, shared mailboxes with outdated permissions and security groups that haven't been reviewed in years.</p>
+      <p>These issues can go unnoticed because finding information still requires effort. Someone needs to know where to look, which system holds it and sometimes whether it exists at all.</p>
+      <p>An AI assistant can answer a question using documents, conversations and other business information without requiring the employee to search each source. That is useful, but it changes how easily existing access can be exercised. An employee might technically be allowed to open dozens of documents that they would never think to read together. Does that mean the organisation intended those documents to be combined into a single answer?</p>
+      <p>Many enterprise assistants work within user permissions, but permissions are not always a reliable reflection of who should have access. Connectors and integrations can introduce additional routes to data, depending on how they are configured.</p>
+      <p>New AI policies have their place. They cannot compensate for information with no clear owner, outdated access groups or retention rules nobody has revisited. Those are governance decisions organisations should already have made.</p>
+      <p>Before giving an assistant broad access to company information, I'd want to know whether the access it inherits still reflects deliberate choices. Otherwise, AI may be the first thing to reveal just how much permission debt has accumulated.</p>
+    </article>
+    <a class="back-link" href="index.html#writing">← Back to writing</a>
+  </main>
 </body>
 </html>

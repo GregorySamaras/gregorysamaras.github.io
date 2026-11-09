@@ -15,6 +15,15 @@
       scroll-behavior: smooth;
     }
 
+    #work, #writing, #contact {
+      scroll-margin-top: 120px;
+    }
+
+    a:focus-visible {
+      outline: 2px solid #A9D1D3;
+      outline-offset: 4px;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -287,9 +296,18 @@
   color: #A9D1D3;
 }
 
-.writing-item:hover small {
+.writing-item:hover small,
+.writing-item:focus-visible small {
   opacity: 1;
-  max-height: 120px;
+  max-height: 180px;
+}
+
+@media (hover: none) {
+  .writing-item small {
+    opacity: 1;
+    max-height: none;
+    margin-top: 8px;
+  }
 }
 
 /* Mobile */
@@ -309,6 +327,10 @@
 
 }
     @media (max-width: 900px) {
+      #work, #writing, #contact {
+        scroll-margin-top: 170px;
+      }
+
       nav {
         flex-direction: column;
         align-items: flex-start;
@@ -537,7 +559,8 @@
 
           <a class="btn btn-primary"
              href="https://www.linkedin.com/in/gregory-samaras-8047181b5/"
-             target="_blank">
+             target="_blank"
+             rel="noopener noreferrer">
              LinkedIn
           </a>
         </div>
